@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====== พื้นฐานของเว็บ ====== -->
+  <meta charset="UTF-8">
+  <title>Activity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ====== Bootstrap 5 ====== -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ====== CSS ตกแต่งเว็บ ====== -->
+  <style>
+    /* ---------- Navbar ---------- */
+    .navbar {
+      background-color: #ffffff !important;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #430203 !important;
+      font-weight: 500;
+    }
+
+    /* ---------- Dropdown ---------- */
+    .dropdown-menu {
+      background-color: #ffffff;
+      border: none;
+    }
+
+    .dropdown-item {
+      color: #430203;
+    }
+
+    .dropdown-item:hover {
+      background-color: rgba(248, 135, 135, 0.293);
+      color: #430203;
+    }
+
+    /* ---------- เอฟเฟกต์เมนู ---------- */
+    .navbar .nav-link {
+      position: relative;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar .nav-link::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(248, 135, 135, 0.293);
+      border-radius: 20px;
+      opacity: 0;
+      transform: scaleX(0.6);
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    .navbar .nav-link:hover::before {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    /* ---------- พื้นหลังเว็บ ---------- */
+    body {
+      background-color: #430203;
+      padding-top: 80p; /* กัน navbar fixed-top บังเนื้อหา */
+    }
+
+    /* ---------- กล่องรูป ---------- */
+    .img-box {
+      height: 500px;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ---------- Banner ---------- */
+.banner {
+  height: 60vh;
+  background-image: url("image/1.PNG");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+
+
+/* ====== Card ====== */
+.activity-card{
+  background: #fff;
+  border-radius:30px;
+  padding:20px;
+  height:100%;
+  box-shadow:0 20px 40px rgba(0,0,0,0.25);
+  transition:.4s ease;
+}
+.activity-card:hover{
+  transform: translateY(-10px);
+}
+
+.activity-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:22px;
+}
+
+.activity-card h4{
+  color:#7a0b12;
+  margin-top:18px;
+  font-weight:600;
+}
+
+.activity-card p{
+  color:#6b3b3b;
+  font-size:.95rem;
+  line-height:1.7;
+}
+
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md fixed-top">
+  <div class="container">
+
+    <a class="navbar-brand" href="index.html">
+      All About Me ✧.* 🍅 ✩ ₊˚
+    </a>
+
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="aboutme.html">About Me</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="activity.html">Activity</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            More
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="movie.html">My Favorite Movie</a></li>
+            <li><a class="dropdown-item" href="anime.html">My Favorite Anime</a></li>
+            <li><a class="dropdown-item" href="book.html">My Favorite Book</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="activity.html">Activity</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section id="home">
+  <div class="img-box rounded-0">
+    <img src="image/1.PNG" alt="Banner">
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+
+    <h2 class="text-center mb-5" style="color:#ffffff;">
+      Activity ꊞ 🧸 ≈ 
+    </h2>
+    <div class="row g-4">
+
+            <!-- Baking -->
+      <div class="col-md-4 fade-up">
+        <div class="activity-card">
+          <img src="image/33.JPEG">
+          <h4>Open House 🎬 ʕ•ᴥ•ʔ </h4>
+          <p>
+           I once helped my professor organize the university's open house event in 2025.
+          </p>
+         
+        </div>
+      </div>
+
+      <!-- Photography -->
+      <div class="col-md-4 fade-up">
+        <div class="activity-card">
+          <img src="image/34.JPEG">
+          <h4>take a photo 📸⋆ °˖✧</h4>
+          <p>
+            I really enjoy taking photos with a digital camera. Whenever I take pictures, I feel more focused and notice my surroundings more.
+          </p>
+         
+        </div>
+      </div>
+
+      <!-- Web Design -->
+      <div class="col-md-4 fade-up">
+        <div class="activity-card">
+          <img src="image/35.JPEG">
+          <h4>Cook˚🧋*◞🍰 ༘</h4>
+          <p>
+           I've always loved eating and cooking, so when I'm at home, I often cook for my family.
+          </p>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ====== Bootstrap JS ====== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

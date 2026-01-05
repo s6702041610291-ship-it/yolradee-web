@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====== พื้นฐานของเว็บ ====== -->
+  <meta charset="UTF-8">
+  <title>My Favorite Book</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ====== Bootstrap 5 ====== -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ====== CSS ตกแต่งเว็บ ====== -->
+  <style>
+    /* ---------- Navbar ---------- */
+    .navbar {
+      background-color: #ffffff !important;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #430203 !important;
+      font-weight: 500;
+    }
+
+    /* ---------- Dropdown ---------- */
+    .dropdown-menu {
+      background-color: #ffffff;
+      border: none;
+    }
+
+    .dropdown-item {
+      color: #430203;
+    }
+
+    .dropdown-item:hover {
+      background-color: rgba(248, 135, 135, 0.293);
+      color: #430203;
+    }
+
+    /* ---------- เอฟเฟกต์เมนู ---------- */
+    .navbar .nav-link {
+      position: relative;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar .nav-link::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(248, 135, 135, 0.293);
+      border-radius: 20px;
+      opacity: 0;
+      transform: scaleX(0.6);
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    .navbar .nav-link:hover::before {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    /* ---------- พื้นหลังเว็บ ---------- */
+    body {
+      background-color: #430203;
+      padding-top: 80p; /* กัน navbar fixed-top บังเนื้อหา */
+    }
+
+    /* ---------- กล่องรูป ---------- */
+    .img-box {
+      height: 500px;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ---------- Banner ---------- */
+.banner {
+  height: 60vh;
+  background-image: url("image/1.PNG");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background:#430203;
+  color:#fff;
+}
+
+/* ---------- Header ---------- */
+.header{
+  text-align:center;
+  padding:40px 20px;
+}
+.header h1{
+  margin:0;
+  font-size:36px;
+}
+.header p{
+  opacity:.85;
+  letter-spacing:2px;
+}
+
+/* ---------- Grid ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  padding:40px;
+}
+
+/* ---------- Book Card ---------- */
+.book{
+  background:#5a0f0f;
+  border-radius:16px;
+  padding:16px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.book img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.book h3{
+  margin:12px 0 4px;
+  font-size:18px;
+}
+
+.book p{
+  margin:0;
+  font-size:14px;
+  opacity:.85;
+}
+
+/* ---------- Stars ---------- */
+.stars{
+  margin:8px 0;
+  color:#f1c40f;
+  font-size:16px;
+}
+
+/* ---------- Favorite Button ---------- */
+.favorite-btn{
+  margin-top:10px;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  font-size:15px;
+  color:#ddd;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  transition:.25s;
+}
+
+.favorite-btn:hover{
+  transform:scale(1.1);
+}
+
+.favorite-btn.active{
+  color:#f5b7b1;
+}
+/* Hover ให้รูปหนังสือลอยเหมือนหน้า Movie */
+.book img {
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.book:hover img {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.45);
+}
+
+ 
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md fixed-top">
+  <div class="container">
+
+    <a class="navbar-brand" href="index.html">
+      All About Me ✧.* 🍅 ✩ ₊˚
+    </a>
+
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="aboutme.html">About Me</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="activity.html">Activity</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            More
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="movie.html">My Favorite Movie</a></li>
+            <li><a class="dropdown-item" href="anime.html">My Favorite Anime</a></li>
+            <li><a class="dropdown-item" href="book.html">My Favorite Book</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="book.html">My Favorite Book</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section id="home">
+  <div class="img-box rounded-0">
+    <img src="image/1.PNG" alt="Banner">
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+
+    
+    <div class="row g-4">
+
+      <div class="header">
+  <h1>Books You Should Read 📒</h1>
+  <p>My regular recommendation for 2025.</p>
+</div>
+
+<div class="grid">
+
+  <!-- Book 1 -->
+  <div class="book">
+    <img src="image/36.JPG">
+    <h3>Twisted Games</h3>
+    <p>Romance · Contemporary Romance</p>
+    <div class="stars">★★★★★</div>
+    <button class="favorite-btn" onclick="toggleFav(this)">
+      🤍 <span>Saved</span>
+    </button>
+  </div>
+
+  <!-- Book 2 -->
+  <div class="book">
+    <img src="image/37.JPG">
+    <h3>Icebreaker </h3>
+    <p>Sports Romance · Romantic Comedy</p>
+    <div class="stars">★★★★☆</div>
+    <button class="favorite-btn" onclick="toggleFav(this)">
+      🤍 <span>Saved</span>
+    </button>
+  </div>
+
+  <!-- Book 3 -->
+  <div class="book">
+    <img src="image/38.JPG">
+    <h3>Fourth Wing</h3>
+    <p>Fantasy Romance · New Adult Fiction</p>
+    <div class="stars">★★★★★</div>
+    <button class="favorite-btn" onclick="toggleFav(this)">
+      🤍 <span>Saved</span>
+    </button>
+  </div>
+
+   <div class="book">
+    <img src="image/39.JPG">
+    <h3>มาลัยสามชาย</h3>
+    <p>Historical Fiction · Drama</p>
+    <div class="stars">★★★★☆</div>
+    <button class="favorite-btn" onclick="toggleFav(this)">
+      🤍 <span>Saved</span>
+    </button>
+  </div>
+
+   <div class="book">
+    <img src="image/40.JPG">
+    <h3>ทางเทวดา</h3>
+    <p>Period Romance · Drama</p>
+    <div class="stars">★★★★☆</div>
+    <button class="favorite-btn" onclick="toggleFav(this)">
+      🤍 <span>Saved</span>
+    </button>
+  </div>
+
+   <div class="book">
+    <img src="image/41.JPG">
+    <h3>พรชีวัน</h3>
+    <p>Period Romance · Drama · Romance</p>
+    <div class="stars">★★★★☆</div>
+    <button class="favorite-btn" onclick="toggleFav(this)">
+      🤍 <span>Saved</span>
+    </button>
+  </div>
+
+   <div class="book">
+    <img src="image/42.JPG">
+    <h3>ใจพิสุทธิ์</h3>
+    <p>Period Romance · Drama · Romance</p>
+    <div class="stars">★★★★☆</div>
+    <button class="favorite-btn" onclick="toggleFav(this)">
+      🤍 <span>Saved</span>
+    </button>
+  </div>
+ <div class="book">
+    <img src="image/43.JPG">
+    <h3>Wild Eyes</h3>
+    <p>Romance · Drama</p>
+    <div class="stars">★★★★☆</div>
+    <button class="favorite-btn" onclick="toggleFav(this)">
+      🤍 <span>Saved</span>
+    </button>
+  </div>
+ <div class="book">
+    <img src="image/44.JPG">
+    <h3>Powerless</h3>
+    <p>Fantasy · Drama · Dystopian ·  Slow-burn</p>
+    <div class="stars">★★★★☆</div>
+    <button class="favorite-btn" onclick="toggleFav(this)">
+      🤍 <span>Saved</span>
+    </button>
+  </div>
+ <div class="book">
+    <img src="image/45.JPG">
+    <h3>The Cruel</h3>
+    <p>Young Adult Fantasy · Drama · Fae</p>
+    <div class="stars">★★★★☆</div>
+    <button class="favorite-btn" onclick="toggleFav(this)">
+      🤍 <span>Saved</span>
+    </button>
+  </div>
+
+
+</div>
+
+<script>
+function toggleFav(btn){
+  btn.classList.toggle("active");
+
+  if(btn.classList.contains("active")){
+    btn.innerHTML = "❤️ <span>Liked</span>";
+  }else{
+    btn.innerHTML = "🤍 <span>Saved</span>";
+  }
+}
+</script>
+
+<!-- ====== Bootstrap JS ====== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
